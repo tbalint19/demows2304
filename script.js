@@ -24,8 +24,9 @@ let getAnswer = async (question) => {
 }
 
 document.getElementById("send").addEventListener("click", async () => {
+  document.getElementById("send").disabled = true
   let myInputValue = document.getElementById("question").value
   let answer = await getAnswer(myInputValue)
+  document.getElementById("send").disabled = false
   document.getElementById("answer").innerText = answer
 })
-
